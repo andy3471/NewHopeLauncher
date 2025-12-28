@@ -17,8 +17,7 @@
     "dist:win": "npm run dist -- -w",
     "dist:mac": "npm run dist -- -m",
     "dist:linux": "npm run dist -- -l",
-    "lint": "eslint --config .eslintrc.json .",
-    "postinstall": "node scripts/patch-helios-core.js"
+    "lint": "eslint --config .eslintrc.json ."
   },
   "engines": {
     "node": "20.x.x"
