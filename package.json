@@ -1,9 +1,9 @@
 {
   "name": "nohopelauncher",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "productName": "NoHope Launcher",
   "description": "Modded Minecraft Launcher",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/)",
+  "author": "Andrew Hargrave (https://github.com/andy3471/)",
   "license": "UNLICENSED",
   "homepage": "https://github.com/andy3471/NewHopeLauncher",
   "bugs": {
@@ -17,7 +17,8 @@
     "dist:win": "npm run dist -- -w",
     "dist:mac": "npm run dist -- -m",
     "dist:linux": "npm run dist -- -l",
-    "lint": "eslint --config .eslintrc.json ."
+    "lint": "eslint --config .eslintrc.json .",
+    "postinstall": "node scripts/patch-helios-core.js"
   },
   "engines": {
     "node": "20.x.x"

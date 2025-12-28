@@ -240,8 +240,13 @@ function createWindow() {
     })
     remoteMain.enable(win.webContents)
 
+    const backgroundsDir = path.join(__dirname, 'app', 'assets', 'images', 'backgrounds')
+    const backgroundFiles = fs.readdirSync(backgroundsDir).filter(file => path.extname(file).toLowerCase() === '.jpg')
+    const randomIndex = Math.floor(Math.random() * backgroundFiles.length)
+    const bkid = path.parse(backgroundFiles[randomIndex]).name
+    
     const data = {
-        bkid: Math.floor((Math.random() * fs.readdirSync(path.join(__dirname, 'app', 'assets', 'images', 'backgrounds')).length)),
+        bkid: bkid,
         lang: (str, placeHolders) => LangLoader.queryEJS(str, placeHolders)
     }
     Object.entries(data).forEach(([key, val]) => ejse.data(key, val))
