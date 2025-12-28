@@ -207,5 +207,5 @@ The best way to contact the developers is on Discord.
 [chromedebugger]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome 'Debugger for Chrome'
 [discord]: https://discord.gg/zNWUXdt 'Discord'
 [wiki]: https://github.com/andy3471/NewHopeLauncher/wiki 'wiki'
-[nebula]: https://github.com/dscalzi/Nebula 'dscalzi/Nebula'
+[nebula]: https://github.com/andy3471/NoHopeNebula 'NoHopeNebula'
 [v2branch]: https://github.com/andy3471/NewHopeLauncher/tree/ts-refactor 'v2 branch'

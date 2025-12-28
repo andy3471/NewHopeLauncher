@@ -1,6 +1,6 @@
 # Distribution Index
 
-You can use [Nebula](https://github.com/dscalzi/Nebula) to automate the generation of a distribution index.
+You can use [Nebula](https://github.com/andy3471/NoHopeNebula) to automate the generation of a distribution index.
 
 The most up to date and accurate descriptions of the distribution spec can be viewed in [helios-distribution-types](https://github.com/dscalzi/helios-distribution-types).
 
