@@ -2858,7 +2858,7 @@ input:checked + .toggleSwitchSlider:before {
     height: 70px;
     width: auto;
     position: relative;
-    border: 2px solid white;
+    border: none;
     box-sizing: border-box;
     border-radius: 50%;
 }
@@ -3938,17 +3938,10 @@ input:checked + .toggleSwitchSlider:before {
     justify-content: center;
 }
 
-/* Stationary image for the spinner. */
-#loadCenterImage {
-    position: absolute;
-    width: 277px;
-    height: auto;
-}
-
-/* Rotating image for the spinner. */
+/* Rotating icon for the spinner. */
 #loadSpinnerImage {
-    width: 280px;
-    height: auto;
+    width: 100px;
+    height: 100px;
     z-index: 400;
 }
 
