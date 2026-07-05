@@ -96,7 +96,7 @@ class ProcessBuilder {
         child.stderr.on('data', (data) => {
             data.trim().split('\n').forEach(x => console.log(`\x1b[31m[Minecraft]\x1b[0m ${x}`))
         })
-        child.on('close', (code, signal) => {
+        child.on('close', (code) => {
             logger.info('Exited with code', code)
             fs.remove(tempNativePath, (err) => {
                 if(err){
@@ -234,7 +234,7 @@ class ProcessBuilder {
                     return true
                 }
             }
-        } catch (err) {
+        } catch (_err) {
             // We know old forge versions follow this format.
             // Error must be caused by newer version.
         }
@@ -372,7 +372,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=NoHopeLauncher')
+            args.push('-Xdock:name=HeliosLauncher')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
@@ -419,11 +419,11 @@ class ProcessBuilder {
             }
         }
 
-        //args.push('-Dlog4j.configurationFile=...')
+        //args.push('-Dlog4j.configurationFile=D:\\WesterosCraft\\game\\common\\assets\\log_configs\\client-1.12.xml')
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=NoHopeLauncher')
+            args.push('-Xdock:name=HeliosLauncher')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
@@ -525,7 +525,7 @@ class ProcessBuilder {
                             val = args[i].replace(argDiscovery, tempNativePath)
                             break
                         case 'launcher_name':
-                            val = args[i].replace(argDiscovery, 'NoHope-Launcher')
+                            val = args[i].replace(argDiscovery, 'Helios-Launcher')
                             break
                         case 'launcher_version':
                             val = args[i].replace(argDiscovery, this.launcherVersion)
@@ -866,7 +866,7 @@ class ProcessBuilder {
      * @returns {{[id: string]: string}} An object containing the paths of each library this module requires.
      */
     _resolveModuleLibraries(mdl){
-        if(!mdl.subModules.length > 0){
+        if(mdl.subModules.length === 0){
             return {}
         }
         let libs = {}
